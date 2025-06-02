@@ -12,7 +12,7 @@ WCAG requirements are implemented using the `@ngrx/signals` library. The `Angula
 
 1. Clone the repository:
 
-- [ ] git clone https://github.com/KasiaKasia/grading-system-ssr-material.git
+- [ ] git clone https://github.com/KasiaKasia/grading-system.git
 
 2. In the project directory, run the following commands:
 
