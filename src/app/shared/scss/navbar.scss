@@ -1,0 +1,66 @@
+@mixin border-bottom {
+    border-bottom-width: 2px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, oklch(0.2 0 0) 0%, oklch(0.74 0.01 147.23) 100%);
+    border-bottom-style: solid;
+    background-color: #3b5880;
+    opacity: 0.9;
+}
+
+.navbar {
+    @include border-bottom;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    color: var(--main-color);
+    z-index: 1;
+
+    .navbar__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .navbar__wrapper-left,
+        .navbar__wrapper-right {
+            display: flex;
+            margin: 5px 25px;
+            .navbar__section {
+                margin: 5px 10px;
+                padding: 10px;
+                .navbar__routerLink {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: var(--main-color);
+                }
+                &:hover {
+                    background: color-mix(in srgb, $color-green-15 15%, transparent);              
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .navbar__wrapper {
+        flex-direction: column;
+        align-items: center;
+
+        .navbar__wrapper-left,
+        .navbar__wrapper-right {
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+
+            .navbar__section {
+                margin: 10px 0;
+                padding: 10px 0;
+
+                .navbar__routerLink {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

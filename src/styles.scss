@@ -1,0 +1,40 @@
+@import "./app/shared/scss/variables.scss";
+@import "./app/shared/scss/app.scss";
+@import "./app/shared/scss/sidebar.scss";
+@import "./app/shared/scss/navbar.scss";
+@import "./app/shared/scss/dashboard.scss";
+:root {
+    --main-font-size: 14px;
+    --main-letter-spacing: 0.12;
+    --main-word-spacing: 0.16;
+    --main-color: white;
+    --main-line-height: 1.5;
+    --mat-sys-on-surface: none;
+    --mat-sys-surface-variant: none;
+    --mat-sys-surface: none;
+    --mdc-protected-button-container-color: rgb(27, 66, 29);
+    --mdc-protected-button-container-background: rgba(76, 34, 143, 0.87);
+
+    --mdc-protected-button-container-color: none;
+    --mdc-protected-button-container-height: 44px;
+}
+
+* {
+    color: var(--main-color);
+    background: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--main-font-size);
+    color: var(--main-color);
+    border-color: var(--main-color);
+    line-height: var(--main-line-height);
+    letter-spacing: var(--main-letter-spacing);
+    word-spacing: var(--main-word-spacing);
+}
+
+body {
+    background-image: url("./assets/icons/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0;
+}

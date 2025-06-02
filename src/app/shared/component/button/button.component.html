@@ -1,0 +1,11 @@
+<button mat-raised-button 
+        [style]="style()" 
+        [type]="type()" 
+        (click)="onClick()" 
+        aria-label="ariaLabel()" 
+        tabindex="0"
+        role="button"
+        [disabled]="isDisabled()">
+    {{buttonTitle()}}
+    <ng-content />
+</button>

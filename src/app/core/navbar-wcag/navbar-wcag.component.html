@@ -1,0 +1,17 @@
+<div class="navbar__wrapper-right">
+    <div class="navbar__section">
+        <app-button [actionType]="UiActionType.FontSize" [value]="FontSize.FONTSIZE_14" [buttonTitle]="'A'" [ariaLabel]="'Change font size to 18px'" />
+    </div>
+    <div class="navbar__section">
+        <app-button [actionType]="UiActionType.FontSize" [value]="FontSize.FONTSIZE_22" [buttonTitle]="'A+'" [ariaLabel]="'Change font size to 24px'" />
+    </div>
+    <div class="navbar__section">
+        <app-button [actionType]="UiActionType.FontSize" [value]="FontSize.FONTSIZE_28" [buttonTitle]="'A++'" [ariaLabel]="'Change font size to 30px'" />
+    </div>
+
+    <div class="navbar__section">
+        <app-button [actionType]="UiActionType.Color" [ariaLabel]="'Change contrast'">
+            <app-img [src]="'/contrast.svg'" [alt]="'Ikonka'" />
+        </app-button>
+    </div>
+</div>

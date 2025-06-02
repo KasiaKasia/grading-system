@@ -1,0 +1,40 @@
+$boxShadow:
+    inset -5px -5px 100px #1d5cb0,
+    5px 5px 5px #6684ae,
+    inset 0 0 5px #ebeef2;
+$boxShadowBlack: 0 0 3px 0 black;
+$border: 1px #222 solid;
+$font-size-xxs: 10px;
+$font-size-xs: 12px;
+$font-size-sm: 14.4px;
+$font-size-md: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+$font-weight-100: 100;
+$font-weight-200: 200;
+$font-weight-300: 300;
+$font-weight-400: 400; //(normal)
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700; //(bold)
+$font-weight-800: 800;
+$font-weight-900: 900;
+
+$color-red: #ff0000;
+$color-green-15: #157f39;
+$color-gray-90: #bbbbba;
+$color-gray-25: #4d4d33;
+$color-green-55: #53c653;
+$color-white: #fff;
+$dark: rgba(#000, 0.87);
+$dark-secondary: rgba(#000, 0.54);
+$dark-disabled: rgba(#000, 0.38);
+$black: black;
+$gradient-text-color-red: linear-gradient(to right, #f59095e8 0%, $color-red 100%);
+$gradient-text-color-blue-20: linear-gradient(to right, #25a5d5, rgb(17 59 95 / 91%) 20%);
+$gradient-text-color-blue-70: linear-gradient(to right, #25a5d5, rgb(17 59 95 / 91%) 70%);
+$gradient-text-color-gray-70: linear-gradient(to right, #f0f0f0, rgba(95, 97, 99, 0.91) 70%);
+$shadow-15: 0 2.45rem 5rem rgba(0, 0, 0, 0.75);
+$shadow-20: 0 .75rem 1.25rem rgba(0, 0, 0, 0.2);

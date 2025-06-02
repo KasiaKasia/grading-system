@@ -1,0 +1,84 @@
+<table mat-table [dataSource]="signalGradeService.gradesSignal()">
+
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.id">
+        <th mat-header-cell *matHeaderCellDef class="wrap-cell">{{ column.header }}</th>
+        <td mat-cell *matCellDef="let row" class="wrap-cell">
+            <ng-container *ngIf="!column.isAction">
+                {{ column.cell(row) }}
+            </ng-container>
+
+            <ng-container *ngIf="column.isAction">
+                <app-icon [nameIcon]="'delete'" [ariaLabel]="'Delete Grade'" [styleIcon]="'color: #cd1616; cursor: pointer'" (click)="onRemoveGrade(row.id, $event)"/>
+            </ng-container>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        [class.selected]="signalGradeService.selectedGrade()?.id === row.id" (click)="onRowClick(row)">
+    </tr>
+</table>
+
+@if ( !signalGradeService.isAddingMode() ) {
+<h2>Add Grade</h2>
+<app-button [style]="'background-color: rgb(8, 75, 23); margin: 4px;'" 
+            [type]="'button'" 
+            [buttonTitle]="'Add'"
+            [actionType]="ActionTypeGrade.StartAddingGrade" />
+}
+@if ( signalGradeService.selectedGrade()) {
+
+<h2>{{ signalGradeService.isAddingMode() ? 'Add New Grade' : 'Edit Grade' }}</h2>
+
+<form #gradeForm="ngForm">
+    <div style="display: grid; gap: 24px;">
+        <mat-form-field appearance="fill" >
+            <mat-label>Symbolic Grade</mat-label>
+            <input matInput [(ngModel)]="signalGradeService.selectedGrade()!.symbolicGrade" name="symbolicGrade"
+                required #symbolicGrade="ngModel">
+
+            <mat-error *ngIf="symbolicGrade.errors?.['required']">Symbolic Grade is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Min Percentage</mat-label>
+            <input matInput type="number" [(ngModel)]="signalGradeService.selectedGrade()!.minPercentage"
+                name="minPercentage" min="0" max="100" required #minPercentage="ngModel">
+
+            <mat-error *ngIf="minPercentage.errors?.['required']">Min Percentage is required</mat-error>
+            <mat-error *ngIf="minPercentage.errors?.['min']">Minimum value is 0%</mat-error>
+            <mat-error *ngIf="minPercentage.errors?.['max']">Maximum value is 100%</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Max Percentage</mat-label>
+            <input matInput type="number" [(ngModel)]="signalGradeService.selectedGrade()!.maxPercentage"
+                name="maxPercentage" min="0" max="100" required #maxPercentage="ngModel">
+
+            <mat-error *ngIf="maxPercentage.errors?.['required']">Max Percentage is required</mat-error>
+            <mat-error *ngIf="maxPercentage.errors?.['min']">Minimum value is 0%</mat-error>
+            <mat-error *ngIf="maxPercentage.errors?.['max']">Maximum value is 100%</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="signalGradeService.selectedGrade()!.descriptiveGrade" 
+                name="descriptiveGrade" maxlength="500" rows="3" #descriptiveGrade="ngModel"></textarea>
+            <mat-hint align="end">{{ descriptiveGrade.value?.length || 0 }}/500</mat-hint>
+
+            <mat-error *ngIf="descriptiveGrade.errors?.['maxlength']">Maximum length is 500 characters</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <app-button [style]="'background-color: rgb(8, 75, 23); margin: 4px;'" 
+                    [type]="'button'"
+                    [value]="signalGradeService.selectedGrade()!" 
+                    [buttonTitle]="'Save'"
+                    [actionType]="ActionTypeGrade.SaveGrade" 
+                    [isDisabled]="gradeForm.invalid?? false" />
+        <app-button [style]="'background-color: rgb(8, 54, 75); margin: 4px;'" 
+                    [type]="'button'"
+                    [buttonTitle]="'Cancel'" 
+                    [actionType]="ActionTypeGrade.CancelGrade" />
+    </div>
+</form>
+}

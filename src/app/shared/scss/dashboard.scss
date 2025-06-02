@@ -1,0 +1,24 @@
+@mixin dashboard-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+.dashboard {
+    @include dashboard-center;
+    margin: 200px 20px;
+
+    &--error {
+        @include dashboard-center;
+        text-align: center; 
+        color: $color-red;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        margin: 400px 0px;
+        padding-top: 150px;
+    }
+}
