@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { SignalGradeService } from '../services/signal-grade/signal-grade.service';
 import { columnsPreview } from '../models/table-column-grade';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-preview-grade',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, NgFor],
   templateUrl: './preview-grade.component.html',
 })
 export class PreviewGradeComponent {

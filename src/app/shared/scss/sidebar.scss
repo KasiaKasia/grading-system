@@ -1,8 +1,10 @@
 .sidebar {
-    width: 15%;
-    margin-top: 90px;
+    width: 15%; 
     box-shadow: $shadow-15;
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
     transition:
         width 0.3s ease,
         opacity 0.3s ease;
@@ -14,15 +16,11 @@
 
         .sidebar__routerLink {
             text-decoration: none;
-            cursor: pointer;
-            color: var(--main-color);
-        }
-        &:hover {
-            background: color-mix(in srgb, $color-green-15 15%, transparent);
-        }
+            cursor: pointer;            
+        }       
     }
-   
 }
+
 .sidebar--hidden {
     width: 0;
     opacity: 0;

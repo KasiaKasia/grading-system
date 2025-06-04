@@ -6,6 +6,5 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './grade.component.html',
-  styleUrl: './grade.component.scss'
 })
 export class GradeComponent {}

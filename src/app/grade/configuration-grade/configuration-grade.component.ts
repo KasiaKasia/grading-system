@@ -9,6 +9,7 @@ import { ButtonComponent } from '../../shared/component/button/button.component'
 import { ActionTypeGrade } from '../../core/settings-wcag/settings-wcag';
 import { columns as columns } from '../models/table-column-grade';
 import { IconComponent } from '../../shared/component/icon/icon.component';
+import { NgFor, NgIf } from '@angular/common';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { IconComponent } from '../../shared/component/icon/icon.component';
   imports: [
     MatTableModule, MatFormFieldModule, MatInputModule,
     IconComponent, ButtonComponent,
-    FormsModule],
+    FormsModule, NgIf, NgFor],
   templateUrl: './configuration-grade.component.html',
 })
 export class ConfigurationGradeComponent {
