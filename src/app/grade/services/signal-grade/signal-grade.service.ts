@@ -27,6 +27,7 @@ export class SignalGradeService {
     this.isAddingMode.set(false);
     this.selectedGrade.set(null);
   }
+  
   startAdding(): void {
     this.isAddingMode.set(true);
     this.selectedGrade.set({

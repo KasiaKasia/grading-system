@@ -3,7 +3,6 @@ import { ColorTheme, FontSize } from '../../settings-wcag/settings-wcag';
 import { inject, DOCUMENT } from '@angular/core';
 
 
-
 interface AppState {
   fontSize: number;
   currentColor: ColorTheme;
