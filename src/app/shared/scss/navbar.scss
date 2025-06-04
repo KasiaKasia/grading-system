@@ -33,12 +33,11 @@
                     text-decoration: none;
                     cursor: pointer;
                     color: var(--main-color);
-                }
-                &:hover {
-                    background: color-mix(in srgb, $color-green-15 15%, transparent);              
+ 
                 }
             }
         }
+      
     }
 }
 
