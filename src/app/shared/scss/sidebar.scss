@@ -1,8 +1,8 @@
 .sidebar {
-    width: 15%; 
-    box-shadow: $shadow-15;
+    width: 15%;
+    box-shadow: var(--main-box-shadow);
     min-height: calc(100vh - 70px);
-    position: sticky;
+    position: fixed;
     top: 80px;
     align-self: flex-start;
     transition:
@@ -16,8 +16,8 @@
 
         .sidebar__routerLink {
             text-decoration: none;
-            cursor: pointer;            
-        }       
+            cursor: pointer;
+        }
     }
 }
 
@@ -27,6 +27,6 @@
 }
 @media (max-width: 769px) {
     .sidebar {
-        margin-top: 415px;
+        margin-top: 280px;
     }
 }

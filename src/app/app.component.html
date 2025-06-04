@@ -1,13 +1,13 @@
 <div class="app">
-  <div class="navbar">
-    <div class="navbar__wrapper">
-      <app-navbar (toggleMenu)="toggleMenu()" />
-      <app-navbar-wcag />
-    </div>
-  </div>
   <div class="app__page">
     <div class="sidebar" [ngClass]="{ 'sidebar--hidden': isMenuHidden }">
       <app-menu />
+    </div>
+    <div class="navbar">
+      <div class="navbar__wrapper">
+        <app-navbar (toggleMenu)="toggleMenu()" />
+        <app-navbar-wcag />
+      </div>
     </div>
     <div class="dashboard">
       <router-outlet />

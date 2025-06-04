@@ -3,13 +3,12 @@
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, oklch(0.2 0 0) 0%, oklch(0.74 0.01 147.23) 100%);
     border-bottom-style: solid;
-    box-shadow: $shadow-15;
+    box-shadow: var(--main-box-shadow); 
 }
-
 .navbar {
-    @include border-bottom; 
+    @include border-bottom;
     position: fixed;
-    width: 100%; 
+    width: 100%;
 
     .navbar__wrapper {
         display: flex;
@@ -27,11 +26,10 @@
                 .navbar__routerLink {
                     text-decoration: none;
                     cursor: pointer;
-                    color: var(--main-color); 
+                    color: var(--main-color);
                 }
             }
         }
-      
     }
 }
 
