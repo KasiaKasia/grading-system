@@ -3,8 +3,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
 
 # About
-The application has been designed with `WCAG` (`Web Content Accessibility Guidelines`) accessibility standards in mind, to ensure digital accessibility. The project presents a mechanism for configuring school grade thresholds.
-WCAG requirements are implemented using the `@ngrx/signals` library. The `Angular Material` library has also been used  You can run the project using SSR `Server-Side Rendering`.
+
+The application has been designed with `WCAG` (`Web Content Accessibility Guidelines`) accessibility standards in mind, to ensure digital accessibility. I used the `@ngrx/signal` library to implement the WCAG principles.  
+The application has the functionality of viewing configured grades and a configuration mechanism by adding, editing and removing school grade thresholds. During implementation, I also took optimisation into account. Among other things, by limiting the loading of libraries. To improve performance, I disabled `Zone.js` and switched to the `provideZonelessChangeDetection()` method.  For the implementation of the layout, I used Angular Material. You can run the project using SSR `Server-Side Rendering`.
  
 
 
