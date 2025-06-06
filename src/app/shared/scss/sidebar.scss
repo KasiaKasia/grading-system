@@ -27,6 +27,8 @@
 }
 @media (max-width: 769px) {
     .sidebar {
-        margin-top: 280px;
+        position: sticky;
+        margin-top: 390px;
+        min-height: 100vh;
     }
 }

@@ -1,5 +1,5 @@
 <div class="dashboard__error">
     <strong> {{status + ' ' + message}}</strong>
-    <div>Żądana strona nie została znaleziona!</div>
-    <div><a [routerLink]="'/grade'">Wróć do strony głównej</a></div>
+    <div>Page not found!</div>
+    <app-router-link [routerPath]="'/grade'" [routerLinkTitle]="'Return to the main page'" />
 </div>
