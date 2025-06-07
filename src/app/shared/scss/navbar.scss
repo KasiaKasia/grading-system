@@ -3,30 +3,40 @@
     border-image-slice: 1;
     border-image-source: linear-gradient(90deg, oklch(0.2 0 0) 0%, oklch(0.74 0.01 147.23) 100%);
     border-bottom-style: solid;
-    box-shadow: var(--main-box-shadow);
+    box-shadow: var(--main-box-shadow__navbar);
 }
-.navbar {
-    @include border-bottom;
-    position: fixed;
-    width: 100%;
 
-    .navbar__wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+.app {
+    .navbar {
+        @include border-bottom;
+        position: relative;
 
-        .navbar__wrapper-left,
-        .navbar__wrapper-right {
+        .navbar__wrapper {
             display: flex;
-            margin: 5px 25px;
-            .navbar__section {
-                margin: 5px 10px;
-                padding: 10px;
-                .navbar__routerLink {
-                    text-decoration: none;
-                    cursor: pointer;
-                    color: var(--main-color);
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+
+
+            .navbar__wrapper-left {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .navbar__section {
+                    padding: 10px;
+
+                    .navbar__routerLink {
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .navbar__wrapper-right {
+                display: flex;
+                gap: 5px;
+                .navbar__section {
+                    padding: 5px;
                 }
             }
         }
@@ -34,25 +44,18 @@
 }
 
 @media (max-width: 769px) {
-    .navbar {
-        position: absolute;
+    .app {
+        .navbar {
+            position: static;
 
-        .navbar__wrapper {
-            flex-direction: column;
- 
-            .navbar__wrapper-left,
-            .navbar__wrapper-right {
+            .navbar__wrapper {
                 flex-direction: column;
-                align-items: center;
-                margin: 0;
 
-                .navbar__section {
-                    margin: 10px 0;
-                    padding: 10px 0;
-
-                    .navbar__routerLink {
-                        font-size: 16px;
-                    }
+                .navbar__wrapper-left,
+                .navbar__wrapper-right {
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0;
                 }
             }
         }

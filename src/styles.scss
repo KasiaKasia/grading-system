@@ -1,6 +1,6 @@
 @import "./app/shared/scss/app.scss";
-@import "./app/shared/scss/sidebar.scss";
 @import "./app/shared/scss/navbar.scss";
+@import "./app/shared/scss/sidebar.scss";
 @import "./app/shared/scss/dashboard.scss";
 @import "./app/shared/scss/wrap.scss";
 :root {
@@ -12,9 +12,8 @@
 
     --main-color: white;
     --main-color-red: #ff0000;
-
-    --main-box-shadow: 0 2.45rem 5rem rgba(0, 0, 0, 0.75);
-
+    --main-box-shadow__sidebar: -1px 4.45rem 3rem 20px rgba(0, 0, 0, 0.75);
+    --main-box-shadow__navbar: 0 2rem 6rem 10px rgba(0, 0, 0, 0.75);
     --mat-sys-on-surface: none;
     --mat-sys-surface-variant: none;
     --mat-sys-surface: none;

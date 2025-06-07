@@ -1,26 +1,24 @@
-@mixin dashboard-center {
-    display: flex;
-    justify-content: center;
-    width: 85%;
-    margin-left: 15%;
-    margin-top: 15%;
-    padding: 20px;
-}
-
-.dashboard {
-    @include dashboard-center;
-
-    &__error {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+.app {
+    .app__page {
+        .dashboard {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            
+            .dashboard__error {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
     }
 }
 
 @media (max-width: 768px) {
     .dashboard {
-        margin: 400px 10px 10px 10px; 
         overflow-x: auto;
     }
 }
