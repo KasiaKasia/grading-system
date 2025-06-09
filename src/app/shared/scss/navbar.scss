@@ -10,7 +10,7 @@
     .navbar {
         @include border-bottom;
         position: relative;
-
+        width: 100%;
         .navbar__wrapper {
             display: flex;
             justify-content: space-between;

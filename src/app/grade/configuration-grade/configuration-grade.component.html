@@ -1,18 +1,18 @@
 <table mat-table [dataSource]="signalGradeService.gradesSignal()">
 
     <ng-container *ngFor="let column of columns" [matColumnDef]="column.id">
-        <th mat-header-cell *matHeaderCellDef class="wrap">{{ column.header }}</th>
-        <td mat-cell *matCellDef="let row" class="wrap">
+        <th mat-header-cell *matHeaderCellDef class="wrap" tabindex="0" role="mat-header-cell">{{ column.header }}</th>
+        <td mat-cell *matCellDef="let row" class="wrap" tabindex="0" role="mat-cell">
             <ng-container *ngIf="!column.isAction">
-                {{ column.cell(row) }}
+                {{ column.cell(row)}}
             </ng-container>
 
             <ng-container *ngIf="column.isAction">
-                <app-icon [nameIcon]="'delete'" [ariaLabel]="'Delete Grade'" [styleIcon]="'color: #cd1616; cursor: pointer'" (click)="onRemoveGrade(row.id, $event)"/>
+                <app-icon [nameIcon]="'delete'" [ariaLabel]="'Delete Grade'" [styleIcon]="'color: #cd1616; cursor: pointer; padding: 20px;'" (click)="onRemoveGrade(row.id, $event)"/>
             </ng-container>
         </td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" tabindex="0" role="mat-header-row"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"
         [class.selected]="signalGradeService.selectedGrade()?.id === row.id" (click)="onRowClick(row)">
     </tr>
@@ -52,9 +52,8 @@
         <mat-form-field appearance="fill">
             <mat-label>Max Percentage</mat-label>
             <input matInput type="number" [(ngModel)]="signalGradeService.selectedGrade()!.maxPercentage"
-                name="maxPercentage" min="0" max="100" required #maxPercentage="ngModel">
+                name="maxPercentage" min="0" max="100" #maxPercentage="ngModel">
 
-            <mat-error *ngIf="maxPercentage.errors?.['required']">Max Percentage is required</mat-error>
             <mat-error *ngIf="maxPercentage.errors?.['min']">Minimum value is 0%</mat-error>
             <mat-error *ngIf="maxPercentage.errors?.['max']">Maximum value is 100%</mat-error>
         </mat-form-field>

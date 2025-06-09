@@ -13,17 +13,17 @@ export const columnsPreview: TableColumn[] = [{
     {
         id: 'minPercentage',
         header: 'Min Percentage',
-        cell: (row) => `${row.minPercentage}%` || ''
+        cell: (row) => `${row.minPercentage}%` 
     },
     {
         id: 'maxPercentage',
         header: 'Max Percentage',
-        cell: (row) => `${row.maxPercentage}%` || ''
+        cell: (row) => row.maxPercentage ? `${row.maxPercentage}%` : ''
     },
     {
         id: 'descriptiveGrade',
         header: 'Description',
-        cell: (row) => row.descriptiveGrade || ''
+        cell: (row) => row.descriptiveGrade
     },
 ]
 

@@ -1,9 +1,9 @@
 <table mat-table [dataSource]="signalGradeService.gradesSignal()">
     <ng-container *ngFor="let column of columnsPreview" [matColumnDef]="column.id">
-        <th mat-header-cell *matHeaderCellDef class="wrap">{{ column.header }}</th>
-        <td mat-cell *matCellDef="let row" class="wrap">{{ column.cell(row) }}</td>
+        <th tabindex="0" role="mat-header-cell" mat-header-cell *matHeaderCellDef class="wrap">{{ column.header }}</th>
+        <td tabindex="0" role="mat-cell" mat-cell *matCellDef="let row" class="wrap">{{ column.cell(row) }}</td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr tabindex="0" role="mat-header-row" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr tabindex="0" role="mat-row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

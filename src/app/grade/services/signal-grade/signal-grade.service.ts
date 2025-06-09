@@ -34,7 +34,6 @@ export class SignalGradeService {
       id: '',
       symbolicGrade: '',
       minPercentage: 0,
-      maxPercentage: undefined,
       descriptiveGrade: ''
     });
   }
